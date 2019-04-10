@@ -37,6 +37,27 @@ let events = [
 
 module.exports = {
 	read: (req, res) => {
+		//add query checker
 		res.send(events)
 	},
+
+	create: (req, res) => {
+		req.body.id = eventId++
+		events.push(req.body)
+		res.send(events)
+	},
+
+	update: (req, res) => {
+		const {id} = req.params
+		const index = events.findIndex(event => +id === +event.id)
+		events.splice(index, 1, req.body)
+		res.send(events)
+	},
+
+	delete: (req, res) => {
+		const {id} = req.params
+		const index = events.findIndex(event => +id === +event.id)
+		events.splice(index, 1)
+		res.send(events)
+	}
 }
