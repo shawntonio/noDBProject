@@ -1,11 +1,8 @@
 .event {
-	height: 5em;
+	height: auto;
 	border: thin solid;
 	display: flex;  
 	flex-direction: column;	
 	align-items: center;
 }
 
-/* h3 {
-	width: 10%;
-} */

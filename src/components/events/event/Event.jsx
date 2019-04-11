@@ -8,19 +8,18 @@ export default class Event extends Component {
 		showGifts: false
 	}
 
-	toggleGifts = (e) => {
-		console.log(e)
+	toggleGifts = () => {
 		this.setState({showGifts: !this.state.showGifts})
 	}
 
 	render() {
-		const {eventName, gifts, eventDate, fund} = this.props.event
+		const {eventName, gifts, eventDate} = this.props.event
 
 		return (
 			<div className="event" onClick={this.toggleGifts} >
 				<h3>{eventName}</h3>
 				{this.state.showGifts ? gifts.map(gift => {
-					return <Gift key={gift.giftId} gift={gift} fund={fund} />
+					return <Gift key={gift.giftId} gift={gift} />
 				}): null}
 				<p className="eventDate">{eventDate}</p>
 			</div>
