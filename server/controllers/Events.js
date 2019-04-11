@@ -21,7 +21,7 @@ let events = [
 				fund: 0
 			}
 		],
-		eventDate: "June 19, 2019",
+		eventDate: "June 19, 2019"
 	},
 	{
 		id: eventId++,
@@ -35,7 +35,7 @@ let events = [
 				fund: 550
 			}
 		],
-		eventDate: "May 23, 2019",
+		eventDate: "May 23, 2019"
 	}
 ]
 

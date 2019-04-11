@@ -21,6 +21,12 @@ export default class Events extends Component {
 	toggleForm = () => {
     this.setState({showForm: !this.state.showForm})
 	}
+
+	addToFund = updatedEvent => {
+		axios.put(`/api/events/${updatedEvent.id}`, updatedEvent).then(res => {
+			this.setState({events: res.data})
+		}).catch(err => console.log('err ', err))
+	}
 	
 	createEvent = event => {
 		axios.post('/api/events', event).then(res => {
@@ -37,7 +43,7 @@ export default class Events extends Component {
 			:(
 				<div className="events">
 					{events.map(event => {
-						return <Event key={event.id} event={event} />
+						return <Event key={event.id} event={event} addToFund={this.addToFund} />
 					})}	
 	
 					<FaPlus onClick={this.toggleForm} className="createEventButton"/>		
