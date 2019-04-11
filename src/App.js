@@ -4,12 +4,8 @@ import Events from './components/events/Events'
 
 class App extends Component {
   
-  state = {
-    showForm: false
-  }
   
   render() {
-    const {showForm} = this.state
     return (
       <div className="App">
         <header>

@@ -6,7 +6,7 @@ export default function Gift(props) {
 		<div className="gift">
 			<h4>{giftName}</h4>
 			<div className="giftInfo">
-				<img src={giftPic} alt="gift picture"/>
+				<img src={giftPic} alt={giftName}/>
 				<p>{`Price: ${price} Fund: ${fund}`}</p>
 			</div>
 		</div>
