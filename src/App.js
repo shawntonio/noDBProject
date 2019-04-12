@@ -1,16 +1,24 @@
 import React, { Component } from 'react';
 import './App.css';
-import Events from './components/events/Events'
+import Events from './components/events/Events';
+import Header from './components/header/Header';
 
 class App extends Component {
   
+  state = {
+    showHeader: true
+  }
+
+  toggleHeader = (e) => {
+    console.log(e)
+    this.setState({showHeader: !this.state.showHeader})
+  }
   
   render() {
     return (
       <div className="App">
-        <header>
-          <h1>Gifty</h1>
-        </header>
+        {this.state.showHeader ? <Header /> :null}
+        
         <Events />
       </div>
     )

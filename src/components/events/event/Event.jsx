@@ -23,20 +23,19 @@ export default class Event extends Component {
 		const index = updatedEvent.gifts.findIndex(gift => +gift.giftId === +giftId)
 		updatedEvent.gifts[index].fund += amount
 		this.props.addToFund(updatedEvent)
-		console.log(updatedEvent)
 	}
 
 	render() {
-		const {eventName, gifts, eventDate} = this.props.event
+		const {eventName, gifts, eventDate, id} = this.props.event
 		
 		return (
-			<div className="event" onClick={this.toggleGifts} >
+			<div className="event" onDoubleClick={this.toggleGifts} >
 				<h3>{eventName}</h3>
 
 				{this.state.showGifts ? gifts.map(gift => {
 					return(
 						<div className="fullEvent">
-							<Gift key={gift.giftId} gift={gift} removeGift={this.removeGift} />
+							<Gift key={gift.giftId} gift={gift} removeGift={this.props.removeGift} />
 
 							<div className="contributeButtons">
 
@@ -54,6 +53,7 @@ export default class Event extends Component {
 					)
 				}): null}
 				<p className="eventDate">{eventDate}</p>
+				<button onClick={() => this.props.deleteEvent(id)} >Remove</button>
 			</div>
 		)
 	}

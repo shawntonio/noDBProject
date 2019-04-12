@@ -1,0 +1,23 @@
+
+header {
+	display: flex;
+	color: #EAC435;
+	background-color: #13293D;
+	position: fixed;
+	top: 0;
+	width: 100vw;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	margin: 1rem;
+}
+
+.present {
+	height: 1.5rem;
+	width: 1.5rem;
+	margin-right: 5px;
+}

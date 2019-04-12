@@ -41,8 +41,8 @@ let events = [
 
 module.exports = {
 	read: (req, res) => {
-		//add query checker
-		res.send(events)
+		req.query.event ? res.send(events.filter(event => event.eventName.includes(req.query.event)))
+		:res.send(events)
 	},
 
 	create: (req, res) => {

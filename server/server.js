@@ -12,3 +12,4 @@ app.put('/api/events/:id', EventsCtrl.update)
 app.delete('/api/events/:id', EventsCtrl.delete)
 
 app.listen(port, () => console.log('listening on port ', port))
+

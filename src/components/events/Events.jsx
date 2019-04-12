@@ -1,15 +1,19 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import {FaPlus} from 'react-icons/fa';
+import {FaSearch} from 'react-icons/fa';
+
+import './Events.css';
 
 import Event from './event/Event';
-import Form from './form/Form'
+import Form from './form/Form';
 
 export default class Events extends Component {
 
 	state = {
 		events: [],
-		showForm: false
+		showForm: false,
+		searchInput: ""
   }
 
   componentDidMount() {
@@ -35,6 +39,22 @@ export default class Events extends Component {
 
 	}
 
+	deleteEvent = id => {
+		axios.delete(`/api/events/${id}`).then(res => {
+			this.setState({events: res.data})
+		}).catch(err => console.log('err ', err))
+	}
+
+	searchHandler = e => {
+    this.setState({searchInput: e})
+	}
+	
+	getSearch = () => {
+		axios.get(`/api/events?event=${this.state.searchInput}`).then(res => {
+      this.setState({events: res.data})
+    }).catch(err => console.log('err ', err))
+	}
+
 	render() {
 		const {events, showForm} = this.state
 
@@ -43,10 +63,15 @@ export default class Events extends Component {
 			:(
 				<div className="events">
 					{events.map(event => {
-						return <Event key={event.id} event={event} addToFund={this.addToFund} />
+						return <Event showHeader={this.props.showHeader} key={event.id} event={event} addToFund={this.addToFund} removeGift={this.removeGift} deleteEvent={this.deleteEvent} />
 					})}	
 	
-					<FaPlus onClick={this.toggleForm} className="createEventButton"/>		
+					<FaPlus onClick={this.toggleForm} className="createEventButton"/>	
+
+					<div className="search">
+						<input onChange={(e) => this.searchHandler(e.target.value)} type="text" className="searchInput" />
+						<FaSearch onClick={this.getSearch} />
+					</div>	
 				</div>
 			)
 		)
