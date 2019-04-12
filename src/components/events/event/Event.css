@@ -2,11 +2,46 @@
 	height: auto;
 	display: flex;  
 	flex-direction: column;	
-	align-items: center;
+	align-items: flex-start;
 	background-color: #D62839;
 	color: #fff;
 	padding: 2rem;
 	margin: 2rem;
 	border-radius: 10px;
+	color: #DAD2D8;
 }
 
+.fullEvent {
+	width: 100%;
+}
+
+p {
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.mainEventInfo {
+	width: 100%;
+	text-align: center;
+}
+
+.contributeButtons {
+	display: flex;
+	justify-content: center;
+	margin: 15px;
+}
+
+.contributeButtons>p {
+	color: #EAC435;
+	margin-right: 10px;
+}
+
+button {
+	background-color: #3581B8;
+	border: 0.3px solid #13293D;
+	padding: 5px 10px;
+	border-radius: 30px;
+	margin: 0 5px;
+	color: #EAC435;
+	font-weight: bolder;
+}

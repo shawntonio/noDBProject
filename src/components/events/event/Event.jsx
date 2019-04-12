@@ -30,14 +30,14 @@ export default class Event extends Component {
 		
 		return (
 			<div className="event" onDoubleClick={this.toggleGifts} >
-				<h3>{eventName}</h3>
+				<h3 className="mainEventInfo">{eventName}</h3>
 
 				{this.state.showGifts ? gifts.map(gift => {
 					return(
 						<div className="fullEvent">
 							<Gift key={gift.giftId} gift={gift} removeGift={this.props.removeGift} />
 
-							<div className="contributeButtons">
+							<div className="contributeButtons mainEventInfo">
 
 								<p>Contribute</p>
 
@@ -52,8 +52,8 @@ export default class Event extends Component {
 						</div>
 					)
 				}): null}
-				<p className="eventDate">{eventDate}</p>
-				<button onClick={() => this.props.deleteEvent(id)} >Remove</button>
+				<p className="eventDate mainEventInfo">{eventDate}</p>
+				<button className="removeButton" onClick={() => this.props.deleteEvent(id)} >Remove</button>
 			</div>
 		)
 	}

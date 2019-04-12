@@ -1,0 +1,49 @@
+
+.gift {
+	width: 98%;
+	margin: 10px;
+	display: flex;
+	justify-content: space-around;
+	border-top: 1px solid #13293D;
+	padding-top: 15px;
+}
+
+img {
+	height: 100px;
+	width: 100px;
+	border: thick solid #3581B8;
+	border-radius: 10px;
+}
+
+.presentGift {
+	width: 150px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.money {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.giftButtons {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.giftButtons>button {
+	font-size: 1.5rem;
+	color: #13293D;
+	font-weight: normal;
+}
+
+
+
+
+
