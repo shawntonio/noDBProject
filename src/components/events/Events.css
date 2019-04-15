@@ -23,6 +23,7 @@
 	top: 1rem;
 	right: 1rem;
 	color: #EAC435;
+	transition: right 0.6s;
 }
 
 .searchInput {
@@ -31,4 +32,8 @@
 	border-radius: 30px;
 	height: 1.5rem;
 	padding: 0px 4px;
+}
+
+.hideSearch {
+	right: -150px;
 }

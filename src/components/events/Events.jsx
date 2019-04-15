@@ -71,7 +71,7 @@ export default class Events extends Component {
 	
 					<FaPlus onClick={this.toggleForm} className="createEventButton"/>	
 
-					<div className="search">
+					<div className={this.props.showHeader ? "search" : "hideSearch"}>
 						<input onChange={(e) => this.searchHandler(e.target.value)}  type="text" className="searchInput" />
 						<FaSearch onClick={this.getSearch} />
 					</div>	

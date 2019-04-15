@@ -27,7 +27,7 @@ class App extends Component {
       <div className="App" onScroll={this.scrollHandle} >
         <Header showHeader={this.state.showHeader} />
   
-        <Events />
+        <Events showHeader={this.state.showHeader}/>
        
       </div>
     )
