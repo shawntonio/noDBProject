@@ -7,10 +7,10 @@ import './Header.css'
 export default function Header(props) {
 	
 	return (
-		<header>
+		<header className={!props.showHeader ? "hide": null}>
 			<div className="logo">
 				<FaGift className="present" />
-				<h1>Gifty</h1>
+				<h1>giftme</h1>
 			</div>
     </header>
 	)

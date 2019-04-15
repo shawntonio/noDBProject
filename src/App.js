@@ -6,20 +6,29 @@ import Header from './components/header/Header';
 class App extends Component {
   
   state = {
-    showHeader: true
+    showHeader: true,
+    scrollPos: 0
   }
 
-  toggleHeader = (e) => {
-    console.log(e)
-    this.setState({showHeader: !this.state.showHeader})
+  
+
+  scrollHandle = (e) => {
+    const {scrollPos} = this.state
+    const newScrollPos = e.target.scrollTop
+    const showHeader = scrollPos > newScrollPos
+    
+    this.setState({scrollPos: newScrollPos, showHeader})
+    
   }
   
   render() {
+    console.log(this.state.scrollPos)
     return (
-      <div className="App">
-        {this.state.showHeader ? <Header /> :null}
-        
+      <div className="App" onScroll={this.scrollHandle} >
+        <Header showHeader={this.state.showHeader} />
+  
         <Events />
+       
       </div>
     )
   }

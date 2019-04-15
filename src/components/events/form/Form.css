@@ -1,0 +1,38 @@
+.backForm {
+	height: 100%;
+	width: 100%;
+	background-color: #D62839;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.frontForm {
+	min-width: 60%;
+	background-color: #3581B8;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 20px;
+	border-radius: 30px;
+	color: #DAD2D8;
+}
+
+h2 {
+	margin: 15px;
+}
+
+.frontForm>input {
+	border: none;
+	border-bottom: 1px solid #000;
+	background-color: #3581B8;
+	width: 30%;
+	margin: 40px;
+	text-align: center;
+	font-size: 1.5rem;
+	color: #DAD2D8;
+}
+
+.formButton {
+	background-color: #13293D;
+}

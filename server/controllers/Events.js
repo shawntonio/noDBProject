@@ -41,7 +41,7 @@ let events = [
 
 module.exports = {
 	read: (req, res) => {
-		req.query.event ? res.send(events.filter(event => event.eventName.includes(req.query.event)))
+		req.query.event ? res.send(events.filter(event => event.eventName.toLowerCase().includes(req.query.event.toLowerCase())))
 		:res.send(events)
 	},
 

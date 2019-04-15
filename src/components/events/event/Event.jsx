@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {FaEdit} from 'react-icons/fa';
 
 import './Event.css'
 import Gift from './gift/Gift'

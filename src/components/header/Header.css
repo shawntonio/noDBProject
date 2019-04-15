@@ -8,6 +8,11 @@ header {
 	width: 100vw;
 	align-items: center;
 	justify-content: space-between;
+	transition: top 0.6s;
+}
+
+.hide {
+	top: -150px;
 }
 
 .logo {

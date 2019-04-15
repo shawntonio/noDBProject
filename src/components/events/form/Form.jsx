@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 
+import GiftForm from './giftForm/GiftForm'
+import './Form.css';
+
 export default class Form extends Component {
 
 	state = {
@@ -19,16 +22,20 @@ export default class Form extends Component {
 
 	render(){
 		return (
-			<div className="form">
-				<h2>Tell me about your event</h2>
+			<div className="backForm">
+				<div className="frontForm">
+					<h2>What will your event be called?</h2>
 
-				<input name="eventName" onChange={this.inputHandler} type="text" placeholder="What will you call your event?"/>
+					<input name="eventName" onChange={this.inputHandler} type="text" placeholder="name"/>
 
-				<input name="eventDate" onChange={this.inputHandler} type="date"/>
+					<h2>When will it be?</h2>
 
-				{/* giftform */}
+					<input name="eventDate" onChange={this.inputHandler} type="date"/>
 
-				<button onClick={this.createEvent} className="submit">Create Event</button>
+					<GiftForm />
+
+					<button onClick={this.createEvent} className="formButton">Create Event</button>
+				</div>
 			</div>
 		)
 	}

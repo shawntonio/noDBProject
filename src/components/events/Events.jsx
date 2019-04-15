@@ -19,7 +19,7 @@ export default class Events extends Component {
   componentDidMount() {
     axios.get('/api/events').then(res => {
       this.setState({events: res.data})
-    }).catch(err => console.log('err ', err))
+		}).catch(err => console.log('err ', err))
 	}
 	
 	toggleForm = () => {
@@ -46,7 +46,10 @@ export default class Events extends Component {
 	}
 
 	searchHandler = e => {
-    this.setState({searchInput: e})
+		this.setState({searchInput: e})
+		axios.get(`/api/events?event=${this.state.searchInput}`).then(res => {
+      this.setState({events: res.data})
+    }).catch(err => console.log('err ', err))
 	}
 	
 	getSearch = () => {
@@ -69,7 +72,7 @@ export default class Events extends Component {
 					<FaPlus onClick={this.toggleForm} className="createEventButton"/>	
 
 					<div className="search">
-						<input onChange={(e) => this.searchHandler(e.target.value)} type="text" className="searchInput" />
+						<input onChange={(e) => this.searchHandler(e.target.value)}  type="text" className="searchInput" />
 						<FaSearch onClick={this.getSearch} />
 					</div>	
 				</div>

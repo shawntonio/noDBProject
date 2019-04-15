@@ -37,8 +37,8 @@ p {
 }
 
 button {
-	background-color: #3581B8;
-	border: 0.3px solid #13293D;
+	background-color: #13293D;
+	border: none;
 	padding: 5px 10px;
 	border-radius: 30px;
 	margin: 0 5px;
